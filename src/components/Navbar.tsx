@@ -26,11 +26,11 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-sm py-4 border-b border-zinc-200' : 'bg-transparent py-6'
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+        isScrolled || mobileMenuOpen ? 'bg-white/95 backdrop-blur-md py-4 shadow-sm border-b border-zinc-200/50' : 'bg-transparent py-4 md:py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-baseline">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <a href="/#home" className={`text-xs font-black tracking-widest uppercase border-b-2 pb-1 ${isScrolled ? 'text-zinc-900 border-zinc-900' : 'text-zinc-900 border-zinc-900'}`}>
           N. Boldrini nutrizionista a Brescia
         </a>
@@ -55,10 +55,11 @@ export function Navbar() {
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center md:hidden">
           <button
-            className={`text-zinc-900 ${isScrolled ? 'text-zinc-900' : 'text-zinc-900'}`}
+            className="text-zinc-900 p-2 -mr-2 focus:outline-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

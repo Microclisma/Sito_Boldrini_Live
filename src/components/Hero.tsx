@@ -176,34 +176,69 @@ export function Hero() {
             className="lg:w-[300px] xl:w-[340px] mt-8 lg:mt-0 lg:self-end flex-shrink-0"
           >
             {/* Athletic Performance Box */}
-            <div className="bg-zinc-900 text-white p-8 rounded-[2rem] flex flex-col justify-between h-[420px]">
-              <div>
-                <div className="text-[10px] uppercase tracking-[0.2em] opacity-60 mb-2 font-black">Performance Hyrox</div>
-                <h2 className="text-4xl font-black italic uppercase text-white">Elite Rank</h2>
+            <div className="bg-zinc-900 text-white p-6 sm:p-8 rounded-[2rem] flex flex-col justify-between h-auto sm:h-[420px] relative overflow-hidden group shadow-2xl">
+              {/* Subtle background glow on hover */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 group-hover:bg-primary/10 transition-colors duration-700 pointer-events-none" />
+
+              <div className="relative z-10">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <div className="text-[10px] uppercase tracking-[0.2em] opacity-60 mb-2 font-black">Performance Hyrox</div>
+                  <h2 className="text-4xl font-black italic uppercase text-white">Elite Rank</h2>
+                </motion.div>
                 
-                <div className="mt-6">
+                <motion.div 
+                  initial={{ opacity: 0, x: -15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="mt-6"
+                >
                   <p className="text-[10px] font-black uppercase tracking-widest text-primary mb-2">Ultimo Risultato</p>
                   <div className="flex justify-between border-b border-white/20 pb-2 items-end">
                     <span className="text-[11px] uppercase opacity-70 font-bold max-w-[60%] leading-tight">Bologna '26<br/>(Pro Doubles)</span>
                     <span className="font-mono font-bold text-white text-lg">57:23</span>
                   </div>
-                </div>
+                </motion.div>
 
                 <div className="mt-6 grid grid-cols-2 gap-4">
-                  <div className="bg-zinc-800 rounded-xl p-4 border border-zinc-700 flex flex-col items-center justify-center text-center">
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ type: "spring", bounce: 0.4, delay: 0.5 }}
+                    className="bg-zinc-800 rounded-xl p-4 border border-zinc-700 flex flex-col items-center justify-center text-center shadow-lg hover:border-zinc-600 transition-colors"
+                  >
                     <span className="text-2xl font-black italic text-white mb-1">#9</span>
                     <span className="text-[9px] font-black uppercase tracking-widest opacity-60 leading-tight">Global Rank<br/>Pro Doubles</span>
-                  </div>
-                  <div className="bg-zinc-800 rounded-xl p-4 border border-zinc-700 flex flex-col items-center justify-center text-center">
+                  </motion.div>
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ type: "spring", bounce: 0.4, delay: 0.6 }}
+                    className="bg-zinc-800 rounded-xl p-4 border border-zinc-700 flex flex-col items-center justify-center text-center shadow-lg hover:border-zinc-600 transition-colors"
+                  >
                     <span className="text-2xl font-black italic text-white mb-1">#2</span>
                     <span className="text-[9px] font-black uppercase tracking-widest opacity-60 leading-tight">Age Group<br/>Pro Doubles</span>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
-              <div className="bg-primary text-zinc-900 p-5 rounded-2xl mt-8">
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                className="bg-primary text-zinc-900 p-5 rounded-2xl mt-8 relative z-10"
+              >
                 <p className="text-[10px] font-black uppercase tracking-widest mb-1">Prossimo Obiettivo</p>
                 <p className="text-sm font-bold uppercase italic">Campionati del mondo Stoccolma 18-21 Giu 2026</p>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
