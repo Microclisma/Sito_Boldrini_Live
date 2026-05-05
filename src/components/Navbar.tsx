@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Link } from 'react-router-dom';
 
 const navLinks = [
   { name: 'Home', href: '/#home' },
@@ -28,8 +27,8 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-500 ${
         isScrolled || mobileMenuOpen 
-          ? 'bg-white/95 backdrop-blur-md py-3 shadow-sm border-b border-zinc-200/50' 
-          : 'bg-white/90 md:bg-transparent backdrop-blur-md md:backdrop-blur-none py-3 md:py-6'
+          ? 'bg-white/95 backdrop-blur-md py-3 shadow-sm border-b border-zinc-200/50'
+          : 'bg-white/90 md:bg-transparent backdrop-blur-md md:backdrop-blur-none py-3 md:py-6 shadow-sm border-b border-zinc-200/50 md:shadow-none md:border-b-0'
       }`}
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-12 md:h-auto">
