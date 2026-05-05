@@ -169,9 +169,9 @@ export function Hero() {
             </div>
           </motion.div>
           
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="lg:w-[300px] xl:w-[340px] mt-8 lg:mt-0 lg:self-end flex-shrink-0"
           >
