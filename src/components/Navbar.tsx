@@ -26,13 +26,20 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-        isScrolled || mobileMenuOpen ? 'bg-white/95 backdrop-blur-md py-4 shadow-sm border-b border-zinc-200/50' : 'bg-transparent py-4 md:py-6'
+      className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-500 ${
+        isScrolled || mobileMenuOpen 
+          ? 'bg-white/95 backdrop-blur-md py-3 shadow-sm border-b border-zinc-200/50' 
+          : 'bg-white/90 md:bg-transparent backdrop-blur-md md:backdrop-blur-none py-3 md:py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-        <a href="/#home" className={`text-xs font-black tracking-widest uppercase border-b-2 pb-1 ${isScrolled ? 'text-zinc-900 border-zinc-900' : 'text-zinc-900 border-zinc-900'}`}>
-          N. Boldrini nutrizionista a Brescia
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-12 md:h-auto">
+        <a href="/#home" className="flex flex-col group">
+          <span className="text-[10px] md:text-xs font-black tracking-tighter uppercase text-zinc-900 leading-none group-hover:text-primary transition-colors">
+            Nazzareno Boldrini
+          </span>
+          <span className="text-[7px] md:text-[9px] font-medium tracking-widest uppercase text-zinc-400 mt-1">
+            Nutrizionista <span className="hidden xs:inline sm:inline">a Brescia</span>
+          </span>
         </a>
 
         {/* Desktop Nav */}
@@ -54,14 +61,13 @@ export function Navbar() {
           </a>
         </nav>
 
-        {/* Mobile Menu Toggle */}
         <div className="flex items-center md:hidden">
           <button
-            className="text-zinc-900 p-2 -mr-2 focus:outline-none"
+            className="text-zinc-900 p-2 -mr-2 focus:outline-none bg-zinc-100/50 rounded-lg active:scale-95 transition-transform"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>

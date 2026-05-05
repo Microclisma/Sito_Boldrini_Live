@@ -6,7 +6,3 @@ coverage/
 *.log
 .env*
 !.env.example
-.env
-.firebase/
-firebase-debug.log
-node_modules

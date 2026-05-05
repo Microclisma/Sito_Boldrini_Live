@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center bg-white overflow-hidden text-zinc-900 pt-20 md:pt-32 pb-16">
       {/* High-end Noise Texture */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-50 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] shadow-inner overflow-hidden" />
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] shadow-inner overflow-hidden" />
       
       {/* Decorative Background Elements - Secured and strictly contained */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none sm:hidden">
